@@ -1,5 +1,5 @@
 const express = require("express");
-const port = 1008;
+const port = 5173;
 const app = express();
 
 app.use(express.urlencoded())
@@ -33,7 +33,8 @@ app.post("/updateData",(req,res)=>{
       (e.name = req.body.name),
       (e.author = req.body.author),
       (e.price = req.body.price),
-      (e.date = req.body.date)
+      (e.date = req.body.date),
+      (e.image = req.body.image)
     }
   })
   res.redirect("/");

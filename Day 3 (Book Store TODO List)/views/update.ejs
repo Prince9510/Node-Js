@@ -11,16 +11,13 @@
   <style>
       body {
         font-family: "Poppins", sans-serif;
-        background-color: #f8f9fa;
+        background-color: #ECEBDE;
         color: #333;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        /* min-height: 100vh; */
       }
-
-      
 
       .form-container {
         display: flex;
@@ -31,7 +28,7 @@
 
       form {
         flex-basis: 40%;
-        background-color: #fff;
+        background-color: #FFFFFF;
         padding: 30px;
         width: 40%;
         margin-top: 100px;
@@ -44,30 +41,31 @@
         width: 92%;
         padding: 15px;
         margin-bottom: 15px;
-        border: 1px solid #ddd;
+        border: 1px solid #A59D84;
         border-radius: 8px;
         font-size: 1em;
       }
 
       input:focus {
-        border-color: #ff6f61;
+        border-color: #C1BAA1;
         outline: none;
       }
 
       button {
         width: 98%;
         padding: 15px;
+        margin-top: 20px;
         border: none;
         border-radius: 8px;
-        background-color: #ff6f61;
-        color: #fff;
+        background-color: #A59D84;
+        color: #FFFFFF;
         font-size: 1.2em;
         cursor: pointer;
         transition: background-color 0.3s ease;
       }
 
       button:hover {
-        background-color: #ff5a4f;
+        background-color: #C1BAA1;
       }
 
       
@@ -79,17 +77,16 @@
       .navbar {
       display: flex;
       justify-content: space-between;
-      /* background-color: #fff; */
       align-items: center;
       width: 80%;
       padding: 15px 20px;
-      background-color: #ff6f61;
+      background-color: #A59D84;
     }
 
     .logo {
       font-size: 24px;
       font-weight: bold;
-      color: #fff;
+      color: #FFFFFF;
     }
 
     .nav-links {
@@ -102,13 +99,13 @@
     }
 
     .nav-links a {
-      color: #fff;
+      color: #FFFFFF;
       text-decoration: none;
       font-size: 18px;
     }
 
     .nav-links a:hover {
-      color: #f4a261;
+      color: #ECEBDE;
     }
 
     .menu-toggle {
@@ -120,9 +117,19 @@
     .bar {
       height: 3px;
       width: 25px;
-      background-color: #fff;
+      background-color: #FFFFFF;
       margin: 4px 0;
       transition: 0.3s;
+    }
+    #imgshow{
+      height: 100px;
+    }
+    .in{
+      margin-top: 5px;
+    }
+    label{
+      font-size: 14px;
+      color: #666;
     }
   </style>
   <body>
@@ -145,12 +152,19 @@
 
     <form action="/updateData" method="post">
         <input type="text" placeholder="Id" class="bookid" name="id" value="<%=singleData.id%>">
-        <input type="text" placeholder="Book Name" name="name" value="<%=singleData.name%>">
-        <input type="text" placeholder="Author Name" name="author" value="<%=singleData.author%>">
-        <input type="number" placeholder="Book Price" name="price" value="<%=singleData.price%>">
-        <input type="date" name="date" value="<%=singleData.date%>">
+        <label for="">Book Name</label>
+        <input type="text" placeholder="Book Name" name="name" value="<%=singleData.name%>" class="in">
+      <label for="">Author Name</label>
+        <input type="text" placeholder="Author Name" name="author" value="<%=singleData.author%>" class="in">
+      <label for="">Book Price</label>
+        <input type="number" placeholder="Book Price" name="price" value="<%=singleData.price%>" class="in">
+      <label for="">Publish  Date</label>
+        <input type="date" name="date" value="<%=singleData.date%>" class="in">
+        <label for="">Image URL</label>
+        <input class="in" type="url" placeholder="Image URL" name="image" value="<%=singleData.image%>" oninput="imagePreview()">
         <button type="submit">UpdateData</button>
       </form>
+      
   </body>
 </html>
 
