@@ -1,0 +1,7 @@
+font-family: 'Poppins', sans-serif;
+
+background: linear-gradient(to right, #01233e, #3c6c92 );
+
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+font-family: 'League Spartan', sans-serif;
