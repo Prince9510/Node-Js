@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="" rel="stylesheet"/>
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/public/style.css">
+<link
+  rel="stylesheet"
+  type="text/css"
+  charset="UTF-8"
+  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+/>
+  </head>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .temp{
+      display: grid;
+      grid-template-columns: repeat(5 , 1fr);
+      gap: 20px 0px;
+    }
+    @media (max-width : 768px) {
+      .temp{
+      grid-template-columns: repeat(2 , 1fr);
+
+      }
+      
+    }
+    .icons i{
+      margin-inline: 8px;
+
+    }
+    .category-img{
+      display: grid;
+      overflow: scroll;
+      grid-template-columns: repeat(7 , 1fr);
+
+    }
+    .category-img::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and other WebKit-based browsers */
+}
+  </style>
+ 
+  <body>
+    <!-- <h1 class="bg-red-300 xs:text-red-500"> -->
+
+      <div class="main-nav max-[768px]:hidden w-full h-[70px] flex justify-center"> 
+        <div class="inner-nav flex w-[80%] max-[992px]:w-full h-[inherit]">
+            <div class="logo flex justify-center items-center w-[10%] max-[992px]:w-[50%]">
+              <img src="/public/logo.png" class="h-[4.667vw] max-[992px]:h-[8vw]" alt="">
+            </div>
+
+            <div class="search w-[60%] max-[992px]:w-[fit-content] flex pl-5 items-center h-[inherit]">
+                <div class="icon flex justify-center border-r-0 items-center w-[40px] h-[40px] border"><i class="ri-search-line"></i></div>
+                <div class="flex input w-[33.33vw] h-[40px] justify-center items-center border"><input placeholder="Search Movie, Event, Plays, Sports and Activities" type="text" class="bg-transparent w-[inherit] outline-0 border-0"></div>
+            </div>
+
+            <div class="other flex max-[992px]:w-[inherit] items-center w-[30%] h-[inherit] justify-end">
+                <h1 class="mi">Rajkot</h1>
+                <i class="ri-arrow-down-s-line mi"></i>
+               <a href="/addMovie"><button class="bg-[#F84464] mi w-[fit-content] px-2 rounded-md h-[35px] text-[14px] text-white">ADD MOVIES</button></a>
+                <i class="fa-solid fa-bars mi text-[21px]"></i>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="new-nav w-full min-[768px]:hidden h-[70px] flex ">
+        <div class="detail flex flex-col justify-center px-4 w-[50%]  h-[inherit]">
+          <h1 class="text-2xl max-[433px]:text-xl font-bold">Welcome Guest!</h1>
+          <h1 class="text-[#dc3548]">Rajkot<i class="ri-arrow-right-s-line"></i></h1>
+        </div>
+        <div class="icons flex justify-end px-4 items-center w-[50%] h-[inherit]">
+          <i class="ri-search-line text-xl"></i>
+          <i class="ri-notification-line text-xl"></i>
+        <a href="/addMovie"><i class="ri-folder-add-line text-xl"></i></a>
+        </div>
+
+      </div>
+      
+      <div class="category-nav max-[768px]:hidden w-full h-[40px] bg-[#f5f5f5] flex justify-center">
+         <div class="inner-category flex h-[inherit] w-[80%]">
+          <div class="frist-category h-[inherit] w-[50%] border">
+            <ul class="flex items-center h-[inherit]">
+              <li class="text-[16px] text-[#333333]">Movies</li>
+              <li class="text-[16px] text-[#333333] pl-3">Stream</li>
+              <li class="text-[16px] text-[#333333] pl-3">Events</li>
+              <li class="text-[16px] text-[#333333] pl-3">Plays</li>
+              <li class="text-[16px] text-[#333333] pl-3">Sports</li>
+              <li class="text-[16px] text-[#333333] pl-3">Activities</li>
+            </ul>
+          </div>
+          <div class="second-category h-[inherit] flex justify-end w-[50%] border">
+            <ul class="flex items-center h-[inherit]">
+              <li class="text-[13px] text-[#333333]">ListYourShow</li>
+              <li class="text-[13px] text-[#333333] pl-3">Corporates</li>
+              <li class="text-[13px] text-[#333333] pl-3">Offers</li>
+              <li class="text-[13px] text-[#333333] pl-3">Gift Cards</li>
+            </ul>
+          </div>
+         </div>
+      </div>
+
+
+
+      <!-- /////////////////////////// resposive  -->
+
+      <div class="category-img w-full  min-[768px]:hidden px-4 h-[70px]">
+          <div class="box h-[inherit] w-[70px]"><img src="/public/11.png" alt=""></div>
+          <div class="box h-[inherit] w-[70px]"><img src="/public/12.png" alt=""></div>
+          <div class="box h-[inherit] w-[70px]"><img src="/public/13.png" alt=""></div>
+          <div class="box h-[inherit] w-[70px]"><img src="/public/14.png" alt=""></div>
+          <div class="box h-[inherit] w-[70px]"><img src="/public/15.png" alt=""></div>
+          <div class="box h-[inherit] w-[70px]"><img src="/public/16.png" alt=""></div>
+          <div class="box h-[inherit] w-[70px]"><img src="/public/17.png" alt=""></div>
+          <div class="box h-[inherit] w-[70px]"><img src="/public/17.png" alt=""></div>
+          <div class="box h-[inherit] w-[70px]"><img src="/public/17.png" alt=""></div>
+      </div>
+
+      <!-- slider  -->
+
+      <div class="slider max-[768px]:hidden w-full h-[fit-content] bg-[#f5f5f5] py-2">
+        <img class="img-1 w-full"  src="https://assets-in.bmscdn.com/promotions/cms/creatives/1726036566435_playcardnewweb.jpg" alt="Image 1">
+        <img class="img-1 w-full"  src="https://assets-in.bmscdn.com/promotions/cms/creatives/1736059895463_asblivewebcarousel.jpg" alt="Image 2">
+      </div>
+
+      <div class="slider min-[769px]:hidden w-full h-[fit-content] bg-[#f5f5f5] py-2">
+        <img class="img w-full"  src="/public/phone.avif" alt="image 1">
+        <img class="img w-full"  src="/public/phone2.avif" alt="Image 2">
+      </div>
+
+<div class="h1 w-full  flex justify-center">
+  <div class="in w-[80%] max-[768px]:w-full max-[768px]:px-4">
+      <h1 class="text-2xl max-[768px]:text-xl font-bold text-[24px]">Recommended Movies</h1>
+    </div>
+    </div>
+
+      <div class="main-card w-full flex justify-center h-[500px]"> 
+        <div class="inner-card max-[768px]:h-[fit-content] max-[768px]:px-4 max-[768px]:w-full flex flex-col w-[80%]">
+          <div class="temp mt-3 ml-3 h-[inherit] w-full">
+
+
+
+            <% data.map((e)=>{ %>
+
+              
+              <div class="card h-[fit-content] max-[768px]:w-[150px] w-[15.333vw] -[230px]">
+                <div class="card-img rounded-lg h-[80%]">
+                  <img class="rounded-lg" src="<%= e.thumbnail%>" alt="">
+                </div>
+                <div class="detail h-[20%]">
+                  <h1 class="font-medium mt-2  text-[1.3vw] max-[400px]:text-[5vw] max-[992px]:text-[1.7vw]"><%= e.name%></h1>
+                  <span class="text-[#666666] max-[400px]:text-[4vw] text-[1.067vw] max-[992px]:text-[1.1vw]"><%= e.category%></span>
+                </div>
+                
+                <div class="action-btn mt-1 w-full gap-2 flex">
+                <a href="/edit?id=<%= e._id%>">  <button class="w-[5.333vw] max-[400px]:h-[9vw] max-[768px]:w-[65px] text-[12px] text-white bg-[#4CAF50] h-[2vw] rounded-lg hover:bg-[#45a049] transition-all duration-300">
+                    Update
+                  </button>
+                </a>
+                <a href="/deleteMovie?id=<%= e._id%>">
+                  <button class="w-[5.333vw] max-[400px]:h-[9vw] max-[768px]:w-[65px] text-[12px] text-white h-[2vw] bg-[#F44336] rounded-lg hover:bg-[#e53935] transition-all duration-300">
+                    Delete
+                  </button>
+                </a>
+                </div>
+              </div>
+            <%})%>
+
+
+
+            
+          </div>
+        </div>
+      </div>
+      
+
+        
+<br><br>
+
+  </body>
+</html>
+
+<script>
+  let pic = document.querySelectorAll(".img-1");
+let index = 0;
+
+function slides(index) {
+  for (let i = 0; i < pic.length; i++) {
+    pic[i].style.display = "none";
+  }
+  pic[index].style.display = "block";
+}
+
+function show() {
+  slides(index);
+  setInterval(() => {
+    index++;
+    if (index === pic.length) {
+      index = 0;
+    }
+    slides(index);
+  }, 3000);
+}
+
+show();
+
+
+
+
+
+  let pic2 = document.querySelectorAll(".img");
+let index2 = 0;
+
+function slides2(index2) {
+  for (let i = 0; i < pic2.length; i++) {
+    pic2[i].style.display = "none";
+  }
+  pic2[index2].style.display = "block";
+}
+
+function show2() {
+  slides2(index2);
+  setInterval(() => {
+    index2++;
+    if (index2 === pic2.length) {
+      index2 = 0;
+    }
+    slides2(index2);
+  }, 3000);
+}
+
+show2();
+</script>
