@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/seodashlogo.png" />
+    <link rel="stylesheet" href="../../node_modules/simplebar/dist/simplebar.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+   <%- include('sidebar')%>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+    <%- include('header')%>
+      <!--  Header End -->
+      <!-- <div class="container-fluid"></div> -->
+       <br><br>
+
+      <table class="table table-bordered mt-5">
+        <thead class="table-light">
+          <!-- fdgfh... -->
+           <tr>
+            <th>Full name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Password</th>
+            <th>Gender</th>
+            <th>Permission</th>
+            <th>Avtar</th>
+            <th>Message</th>
+            <th colspan="2">Action</th>
+           </tr>
+
+        </thead>
+        <tbody>
+          <% data.map((e) => { %>
+          <tr class="<%= e._id.toString() === adminData._id.toString() ? 'table-success' : '' %>">
+              <td>
+                <%= e.name %>
+                <% if (e._id.toString() === adminData._id.toString()){%>
+                <span style="color: green;">(You)</span>
+                <%}%>
+              </td>
+              <td><%= e.email%></td>
+              <td><%= e.phone%></td>
+              <td><%= e.password%></td>
+              <td><%= e.gender%></td>
+              <td><%= e.permission%></td>
+              <td><img src="<%= e.image%>" style="height: 50px; width: 50px; border-radius: 100%;" alt=""></td>
+              <td><%= e.message%></td>
+              <td>
+              <a href="editAdmin?id=<%= e._id%>"><button type="button" class="btn btn-primary">Update</button></a>
+              <a href="deleteAdmin?id=<%= e._id%>"><button type="button" class="btn btn-danger">Delete</button></a>
+              </td>
+            </tr>
+              <%})%>
+        </tbody>
+      </table>
+      <!-- table  -->
+
+
+      
+    </div>
+  </div>
+  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  <script src="../assets/js/sidebarmenu.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+
+</html>
