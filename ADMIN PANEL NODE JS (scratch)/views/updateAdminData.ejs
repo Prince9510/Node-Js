@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Layout - Voler Admin Dashboard</title>
+    
+    <link rel="stylesheet" href="/public/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="/public/assets/css/app.css">
+    <link rel="shortcut icon" href="/public/assets/images/favicon.svg" type="image/x-icon">
+</head>
+<body>
+    <div id="app">
+       <%- include('aside')%>
+
+
+        <div id="main">
+           <%- include('header')%>
+            
+<div class="main-content container-fluid">
+    <div class="col-md-6 col-12">
+        <div class="card">
+            <div class="card-header ">
+            <h4 class="card-title">Fill Out Your Details </h4>
+            </div>
+            <div class="card-content">
+            <div class="card-body py-0">
+                <form class="form form-vertical" action="/updateAdminData/<%= data._id %>" method="post"  enctype="multipart/form-data">
+                <div class="form-body">
+                    <div class="row">
+                    <div class="col-12">
+                        <input type="hidden"  value="<%= data._id%>">
+                        <div class="form-group has-icon-left">
+                            <label for="first-name-icon">Full Name</label>
+                            <div class="position-relative">
+                                <input name="adminName" value="<%= data.adminName %>" type="text" class="form-control" placeholder="Full Name" id="first-name-icon">
+                                <div class="form-control-icon">
+                                    <i data-feather="user"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group has-icon-left">
+                            <label for="email-id-icon">Email</label>
+                            <div class="position-relative">
+                                <input name="adminEmail" value="<%= data.adminEmail %>" type="text" class="form-control" placeholder="Email" id="email-id-icon">
+                                <div class="form-control-icon">
+                                    <i data-feather="mail"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group has-icon-left">
+                            <label for="mobile-id-icon">Mobile</label>
+                            <div class="position-relative">
+                                <input name="adminMobile" value="<%= data.adminMobile %>" type="text" class="form-control" placeholder="Mobile" id="mobile-id-icon">
+                                <div class="form-control-icon">
+                                    <i data-feather="phone"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-group has-icon-left">
+                            <label for="password-id-icon">Password</label>
+                            <div class="position-relative">
+                                <input name="adminPassword" value="<%= data.adminPassword %>" type="password" class="form-control" placeholder="Password" id="password-id-icon">
+                                <div class="form-control-icon">
+                                    <i data-feather="lock"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-group has-icon-left">
+                            <label for="password-id-icon">Profile Picture</label>
+                            <div class="position-relative">
+                                <input name="adminPicture" class="form-control form-control-sm" id="SmallFile" type="file">
+                                <div class="form-control-icon">
+                                    <i data-feather="mail"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="password-id-icon">Gender</label>
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="adminGender" value="Male" <%= data.adminGender === 'Male' ? 'checked' : '' %> id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Male
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="adminGender" value="Female" <%= data.adminGender === 'Female' ? 'checked' : '' %> id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Female
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="adminGender" value="Other" <%= data.adminGender === 'Other' ? 'checked' : '' %> id="flexRadioDefault3">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                                Other
+                            </label>
+                        </div>
+                    </div>
+
+                    
+
+                    <div>
+                    </div>
+
+                    
+                    <div class="col-12 mb-4 d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                    </div>
+                    
+                    </div>
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+</div>
+
+            <footer>
+                <div class="footer clearfix mb-0 text-muted">
+                    <div class="float-start">
+                        <p>2022 &copy; Voler</p>
+                    </div>
+                    <div class="float-end">
+                        <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a href="https://saugi.me">Saugi</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="/public/assets/js/feather-icons/feather.min.js"></script>
+    <script src="/public/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/public/assets/js/app.js"></script>
+    <script src="/public/assets/js/main.js"></script>
+</body>
+</html>

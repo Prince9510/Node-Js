@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table - Voler Admin Dashboard</title>
+
+  <link rel="stylesheet" href="/public/assets/css/bootstrap.css">
+
+  <link rel="stylesheet" href="/public/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+  <link rel="stylesheet" href="/public/assets/css/app.css">
+  <link rel="shortcut icon" href="/public/assets/images/favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+  <div id="app">
+    <%- include('aside')%>
+      <div id="main">
+        <%- include('header')%>
+
+          <div class="main-content container-fluid">
+            <div class="row" id="table-bordered">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Products</h4>
+                  </div>
+                  <div class="card-content">
+
+                    <!-- table bordered -->
+                    <div class="table-responsive">
+                      <table class="table table-bordered mb-0">
+                        <thead>
+                          <tr>
+                            <th>Product NAME</th>
+                            <th>Product Price</th>
+                           
+                            <th>Product subCategory</th>
+                            <th>Product Description</th>
+                            <th>Product Image</th>
+                            <th colspan="2">ACTION</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% data.map((e, i) => { %>
+                            <tr>
+                              <td><%= e.productName %></td>
+                              <td><%= e.productPrice %></td>
+                             
+                              <td><%= e.subCategoryId.subCategoryName %></td>
+                              <td><%= e.productDescription %></td>
+                              <td><img src="<%= e.productImage %>" style="height: 50px; width: 50px;" alt=""></td>
+                              <td>
+                                <a href="/updateProduct?id=<%= e._id%>"><button type="button" class="btn btn-primary">Update</button></a>
+                                <a href="/deleteProduct?id=<%= e._id%>"><button type="button" class="btn btn-danger">Delete</button></a>
+                              </td>
+                            </tr>
+                          <% }) %>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Responsive tables end -->
+          </div>
+
+          <footer>
+            <div class="footer clearfix mb-0 text-muted">
+              <div class="float-start">
+                <p>2022 &copy; Voler</p>
+              </div>
+              <div class="float-end">
+                <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a
+                    href="https://saugi.me">Saugi</a></p>
+              </div>
+            </div>
+          </footer>
+      </div>
+  </div>
+  <script src="/public/assets/js/feather-icons/feather.min.js"></script>
+  <script src="/public/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <script src="/public/assets/js/app.js"></script>
+
+  <script src="/public/assets/js/main.js"></script>
+</body>
+
+</html>

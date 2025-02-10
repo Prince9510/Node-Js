@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Layout - Voler Admin Dashboard</title>
+    
+    <link rel="stylesheet" href="/public/assets/css/bootstrap.css">
+    
+    <link rel="stylesheet" href="/public/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="/public/assets/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/public/assets/images/favicon.svg" type="image/x-icon">
+</head>
+<body>
+    <div id="app">
+       <%- include('aside')%>
+
+
+        <div id="main">
+           <%- include('header')%>
+            
+<div class="main-content container-fluid">
+    <div class="col-md-6 col-12">
+        <div class="card">
+            <div class="card-header ">
+            <h4 class="card-title">Update Product</h4>
+            </div>
+            <div class="card-content">
+            <div class="card-body py-0">
+                <form class="form form-vertical" action="/updateProduct" method="post"  enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<%= data._id %>">
+                <div class="form-body">
+                    <div class="row">
+                    <div class="col-12">
+                        <div class="form-group has-icon-left">
+                            <label for="first-name-icon">Product Name</label>
+                            <div class="position-relative">
+                                <input value="<%=data.productName%>" name="productName" type="text" class="form-control" placeholder="Product Name" id="first-name-icon">
+                                <div class="form-control-icon">
+                                    <i class="fa-solid fa-user" style="padding-left: 8px;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12">
+                        <div class="form-group has-icon-left">
+                            <label for="email-id-icon">Product Price</label>
+                            <div class="position-relative">
+                                <input value="<%=data.productPrice%>" name="productPrice" type="text" class="form-control" placeholder="Product Price" id="email-id-icon">
+                                <div class="form-control-icon">
+                                    <i class="fa-solid fa-indian-rupee-sign" style="padding-left: 8px;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12">
+                        <div class="form-group has-icon-left">
+                            <label for="first-name-icon">Select Category</label>
+                            <div class="position-relative">
+                                <select class="form-select" name="subCategoryId" aria-label="Default select example">
+                                    <% subCategories.forEach((e) => { %>
+                                        <option <%= e._id.toString() === data.subCategoryId._id.toString() ? 'selected' : '' %> value="<%= e._id %>"><%= e.subCategoryName %></option>
+                                    <% }) %>
+                                  </select>
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-group has-icon-left">
+                            <label for="mobile-id-icon">Product Description</label>
+                            <div class="position-relative">
+                                <input value="<%=data.productDescription%>" name="productDescription" type="text" class="form-control" placeholder="Product Description" id="mobile-id-icon">
+                                <div class="form-control-icon">
+                                    <!-- <i class="fa-solid fa-phone" style="padding-left: 8px;"></i> -->
+                                    <i class="fa-solid fa-message" style="padding-left: 7px;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12">
+                        <div class="form-group has-icon-left">
+                            <label for="password-id-icon">Product Image</label>
+                            <div class="position-relative">
+                                <input value="<%=data.productImage%>" name="productImage" class="form-control form-control-sm" id="SmallFile" type="file">
+                                <div class="form-control-icon">
+                                    <i data-feather="mail"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+
+                    <div>
+                    </div>
+
+                    
+                    <div class="col-12 mb-4 d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                        <button type="reset" class="btn btn-secondary me-1 mb-1">Reset</button>
+                    </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+</div>
+
+            <footer>
+                <div class="footer clearfix mb-0 text-muted">
+                    <div class="float-start">
+                        <p>2022 &copy; Voler</p>
+                    </div>
+                    <div class="float-end">
+                        <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a href="https://saugi.me">Saugi</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="/public/assets/js/feather-icons/feather.min.js"></script>
+    <script src="/public/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/public/assets/js/app.js"></script>
+    
+    <script src="/public/assets/js/main.js"></script>
+</body>
+</html>
