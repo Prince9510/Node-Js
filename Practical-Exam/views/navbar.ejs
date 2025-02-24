@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Task Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+    }
+    .nav-item {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+    .nav-item:hover {
+      text-decoration: underline;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+ 
+
+  <header>
+    
+
+    <input type="checkbox" id="check" />
+    <label for="check" class="icons">
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <i class="bx bx-x" id="close-icon"></i>
+    </label>
+
+    <nav class="navbar">
+      <a href="#" class="nav-item" style="--i: 0">Home</a>
+      <a href="/taskform" class="nav-item" style="--i: 1">recipe Form</a>
+      <a href="/tasklist" class="nav-item" style="--i: 2">recipe List</a>
+      <a href="/" class="nav-item" style="--i: 3">Sign out</a>
+    </nav>
+  </header>
+  <br>
+
+
+ <h1>recipes</h1>
+ 
+</body>
+</html>

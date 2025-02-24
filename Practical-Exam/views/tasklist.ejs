@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Responsive Table</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 	<link rel="stylesheet" href="assets/css/style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Favicon icon -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .table {
+      width: 80%;
+      margin: 50px auto;
+      border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .table th, .table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .table th {
+      background-color: #f2f2f2;
+    }
+    .table tr:hover {
+      background-color: #f1f1f1;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .fa-trash {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <table class="table">
+    <thead>
+      <th>S.No</th>
+      <th>Name</th>
+      <th>Dish</th>
+      <th>Gender</th>
+      <th>Prefer</th>
+      <th>Status</th>
+    </thead>
+    <tbody>
+      <% data.map((e,i)=>{%>
+        <tr>
+          <th scope="row"><%=i+1%></th>
+          <td><%=e.name%></td>
+          <td><%=e.email%></td>
+          <td><%=e.gender%></td>
+          <td><%=e.prefer%></td>
+        
+          <td><a href="/edit?id=<%=e.id%>"><button><i class="fa-solid fa-pen-to-square"></i></a>
+          <a href="/delete?id=<%=e.id%>"><button><button><i class="fa-solid fa-trash"></i></a></td>
+        </tr>
+      <%})%>
+    </tbody>
+  </table>
+</body>
+
+</html>

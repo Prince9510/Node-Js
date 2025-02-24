@@ -1,0 +1,156 @@
+<div id="wrapper">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 50%;
+      margin: 50px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    .form-set {
+      margin-bottom: 15px;
+    }
+    .form-set label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-set input[type="text"],
+    .form-set input[type="email"],
+    .form-set input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-set input[type="radio"],
+    .form-set input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .submit-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .submit-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+    <div class="container">
+      <header class="left header">
+        <div class="title-header">
+          <h1 id="title" class="text-center">Recipe </h1>
+          <p id="description" class="description text-center">Thank you for taking the time to help us improve the platform</p>
+        </div>
+      </header>    
+  
+    <form id="survey-form" class="right" action="/insert"  method="post">
+      <div class="form-set">
+        <label id="name-label" for="name">Name</label>
+          <input
+                 type="text"
+                 name="name"
+                 id="name"
+                 class="form-control"
+                 placeholder="Enter your name"
+                 required/>
+      </div>
+  
+      <div class="form-set">
+        <label id="email-label" for="email">Dish</label>
+          <input
+                 type="text"
+                 name="email"
+                 id="email"
+                 class="form-control"
+                 placeholder="Enter your Dish"
+                 required/>
+      </div>
+  
+     
+  
+   
+  
+      <div class="form-set">
+        <p id="radio-label">Enter your Gender </p>
+        <label class="radio">
+          <input
+                 name="gender"
+                 type="radio"
+                 class="input-radio"
+                 value="man"
+                 checked
+          />Man
+        </label>
+      
+        <label class="radio">
+          <input
+                 name="gender"
+                 type="radio"
+                 class="input-radio"
+                 value="woman"
+          />Woman
+        </label>
+  
+        <label class="radio">
+          <input
+                 name="gender"
+                 type="radio"
+                 class="input-radio"
+                 value="other"
+          />Other
+      </label>
+      </div>
+  
+      <div class="form-set">
+      
+        <label>
+          <input
+                 name="prefer"
+                 value="Gujarati-recipe"
+                 type="checkbox"
+                 class="input-checkbox"
+          />Gujarati-recipe
+        </label>
+      
+        <label>
+          <input
+                 name="prefer"
+                 value="Punjabi-recipe"
+                 type="checkbox"
+                 class="input-checkbox"
+          />Punjabi-recipe
+        </label>
+      
+      
+      
+        <label>
+          <input
+                 name="prefer"
+                 value="chinese-recipe"
+                 type="checkbox"
+                 class="input-checkbox"
+          />chinese-recipe
+        </label>
+      </div>
+  
+     
+    
+     <div class="form-set">
+        <button type="submit" id="submit" class="submit-button">
+          Submit
+        </button>
+     </div>
+    </form>
+  </div>
+</div>
+

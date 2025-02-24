@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        center {
+            margin-top: 50px;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Edit-Data</h1>
+    <form action="/update"  method="post">
+        <input type="hidden" name="id" value="<%= user.id %>">
+        <input type="text" placeholder="Enter your name" name="name" value="<%= user.name %>">
+        <input type="text" placeholder="Enter your email" name="email" value="<%= user.email %>">
+       
+        <label>man</label>
+        <input type="radio" name="gender" value="man" <%= user.gender === 'man' ? 'checked' : '' %>>
+        <label>woman</label>
+        <input type="radio" name="gender" value="woman" <%= user.gender === 'woman' ? 'checked' : '' %>>
+        <label>others</label>
+        <input type="radio" name="gender" value="others" <%= user.gender === 'others' ? 'checked' : '' %>>
+        <br>
+        <label>Gujarati</label>
+        <input type="checkbox" name="prefer" value="Gujarati-recipe" <%= user.prefer.includes('Gujarati-recipe') ? 'checked' : '' %>>
+        <label>Punjabi</label>
+        <input type="checkbox" name="prefer" value="Punjabi-recipe" <%= user.prefer.includes('Punjabi-recipe') ? 'checked' : '' %>>
+        <label>chinese</label>
+        <input type="checkbox" name="prefer" value="chinese-recipe" <%= user.prefer.includes('chinese-recipe') ? 'checked' : '' %>>
+      
+        <button type="submit">UPDATE</button>
+    </form>
+    </center>
+</body>
+</html>

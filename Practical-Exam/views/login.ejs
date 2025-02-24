@@ -1,0 +1,83 @@
+<div class="box">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .box {
+      width: 30%;
+      margin: 100px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    .inputBox {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .inputBox input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+    .inputBox span {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      transition: 0.3s;
+      pointer-events: none;
+    }
+    .inputBox input:focus + span,
+    .inputBox input:valid + span {
+      top: -20px;
+      left: 10px;
+      color: #4CAF50;
+      font-size: 12px;
+    }
+    .inputBox i {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: #ccc;
+    }
+    .links a {
+      text-decoration: none;
+      color: #4CAF50;
+      margin-right: 10px;
+    }
+    #submit {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #submit:hover {
+      background-color: #45a049;
+    }
+  </style>
+    <form action="/loginData" method="post">
+        <h2>Sign in</h2>
+        <div class="inputBox">
+            <input type="text" name="email" required>
+            <span>User Email</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="password" required>
+            <span>Password</span>
+            <i></i>
+        </div>
+        <div class="links">
+            <a href="/navbar">Forgot Password?</a>
+            <a href="/">Sign Up</a>
+        </div>
+        <input type="submit" id="submit" value="Login">
+    </form>
+</div>
