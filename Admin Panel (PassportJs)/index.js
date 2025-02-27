@@ -30,6 +30,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.authenticateUser);
 
+app.get("/login" , (req , res) => {
+  res.render("login")
+})
+
 app.use("/",require('./Routes/route'));
 app.use("/", catRoute); // Use the catRoute
 app.use("/", catSubRoute); // Use the catSubRoute
