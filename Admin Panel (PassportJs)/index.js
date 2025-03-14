@@ -1,5 +1,5 @@
 const express = require("express");
-const port = process.env.PORT || 5173; // Use environment variable for port
+const port = 5173;
 const app = express();
 const db = require("./config/db");
 const path = require("path");
@@ -11,39 +11,31 @@ const catSubRoute = require('./Routes/catSubRoute'); // Import the catSubRoute
 const ExtraSubCategory = require('./Routes/extraSubCatRoute'); // Import the catSubRoute
 const Product = require('./Routes/productRoute'); // Import the Products
 
+
 app.use(express.urlencoded({ extended: true }));
-app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "public")));
-app.use("/public", express.static(path.join(__dirname, "public")));
+app.set("view engine","ejs");
+app.use(express.static(path.join(__dirname,"public")));
+app.use("/public",express.static(path.join(__dirname,"public"))); 
 app.use("/uploads", express.static(path.join(__dirname, 'uploads')));
 app.use(cookie());
 app.use(session({
-  name: "local",
+  name : "local",
   secret: 'no secret',
   resave: true,
   saveUninitialized: false,
-  cookie: { maxAge: 100 * 100 * 60 }
-}));
+  cookie: { maxAge : 100 * 100 * 60 }
+})); 
 
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.authenticateUser);
 
-app.get("/", (req, res) => {
-  res.render("login");
-});
- 
-app.use("/", require('./Routes/route'));
+app.use("/",require('./Routes/route'));
 app.use("/", catRoute); // Use the catRoute
 app.use("/", catSubRoute); // Use the catSubRoute
 app.use("/", ExtraSubCategory); // Use the Extra category
 app.use("/", Product); // Use the Products
 
-// Handle 404 - Keep this as a last route
-app.use((req, res, next) => {
-  res.status(404).render('404', { url: req.originalUrl });
-});
-
-app.listen(port, (err) => {
-  err ? console.log(err) : console.log(`http://localhost:${port}`);
+app.listen(port, (err)=>{
+err?console.log(err):console.log(`http://localhost:${port}`);
 });
