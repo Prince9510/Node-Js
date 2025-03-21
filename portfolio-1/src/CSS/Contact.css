@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* font-family: "Rubik", csans-serif; */
+/* font-family: "Oswald", sans-serif; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.contact{
+    /* height: 300px; */
+    height: fit-content;
+    width: 100%;
+    background-color: #0c0d0f;
+    /* background-color: aqua; */
+    background-image: url(map.png);
+}
+
+.contact small{
+    font-size: 18px;
+    font-family: "Rubik", csans-serif;
+    color: #08D665;
+    font-weight: 500;
+
+
+}
+.contact h2{
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    letter-spacing: -2;
+    color: white;
+    font-size: clamp(25px, 2.5vw, 48px);
+}
+.contact-box {
+    width: fit-content;
+    height: fit-content;
+    gap: 10px;
+    margin-top: 50px;
+    /* background-color: bisque; */
+
+}
+.contact-box input{
+    border: 2px solid #22CD6F;
+    border-radius: 4px;
+    background-color: #32383A;
+    font-size: 14px;
+    height: 50px;
+    width: 270px;
+    outline: 0;
+    color: white;
+    padding-left: 15px;
+}
+.contact-box input::placeholder{
+    font-size: 14px;
+}
+.contact-span{
+    color: #08D665;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width : 768px) {
+    .contact-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .contact-box button{
+        margin-top: 10px;
+    }
+    
+}

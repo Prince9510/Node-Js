@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* font-family: "Rubik", csans-serif; */
+/* font-family: "Oswald", sans-serif; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.portfolio{
+    height: fit-content;
+    width: 100%;
+    background-color: #0c0d0f;
+    /* background-color: tan; */
+}
+.inner-portfolio{
+    width: 75%;
+    height: fit-content;
+    /* background-color: tomato; */
+}
+
+
+
+
+
+
+
+
+
+/* //////////////////// 3 //////////////////////////// */
+
+
+.main-services-card{
+    height: fit-content;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    /* background-color: aqua;  */
+    gap: 30px;
+}
+.services-card{
+    height: fit-content;
+    width: 100%;
+    background-color: #121617;
+    position: relative;
+    overflow: hidden;
+    z-index: 11;
+    transition: all .3s;
+}
+.services-card i{
+    color: #62e6ac;
+    font-size: 64px;
+    z-index: 11;
+}
+.services-card h4{
+    font-family: "Oswald", sans-serif; 
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 500;
+    z-index: 11;
+}
+
+
+.services-card ul{
+    list-style-type: none;
+    z-index: 11;
+}
+.services-card li{
+    font-family: "Rubik", csans-serif;
+    text-align: center;
+    font-size: 18px;
+}
+.diffrent-services li{
+    color: white;
+}
+
+.cri-effect{
+    background-color: transparent;
+    height: 100%;
+    width: inherit;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+}
+
+
+
+
+.f1 {
+  height: 70px;
+  width: 70px;
+  background-color: #5fdb97;
+  border-radius: 100%;
+  transition: transform 0.5s ease;
+  position: absolute;
+}
+.f2{
+  height: 150px;
+  width: 150px;
+  background-color: #5fdb97;
+  border-radius: 100%;
+  transition: transform 0.5s ease;
+  position: absolute;
+}
+.f3{
+  height: 250px;
+  width: 250px;
+  background-color: #5fdb97;
+  border-radius: 100%;
+  transition: transform 0.5s ease;
+  position: absolute;
+}
+.f4{
+  height: 350px;
+  width: 350px;
+  background-color: #5fdb97;
+  border-radius: 100%;
+  transition: transform 0.5s ease;
+  /* bottom: 00; */
+  top: 120px;
+  right: -160px;
+  position: absolute;
+}
+.fff{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.f2 {
+  background-color: #4dd78b;
+  /* z-index: -1; */
+}
+.f3 {
+  background-color: #39d27e;
+  /* z-index: -2; */
+}
+.f4 {
+  background-color: #22cd6f;
+  /* z-index: -3; */
+}
+
+.same-services .fff{
+    transform: scale(0);
+
+}
+.services-card:hover{
+    background-color: #08c75f;
+}
+.same-services:hover .same-h4{
+    color: white;
+}
+.same-services:hover .same-ul{
+    color: white;
+}
+.same-h4{
+    color: #08d765;
+}
+.same-ul{
+    color: #999999;
+}
+
+.same-services:hover .f1 {
+  transform: scale(1);
+  /* background-color: red; */
+}
+.same-services:hover .f2 {
+  transform: scale(1);
+}
+.same-services:hover .f3 {
+  transform: scale(1);
+}
+.same-services:hover .f4 {
+  transform: scale(1);
+}
+
+  
+
+.diffrent-services{
+    background-color: #08c75f;
+}
+
+
+@media (max-width : 992px) {
+    .frist-experienceBox{
+        width: 100%;
+
+    }
+    .second-experienceBox{
+        width: 100%;
+        margin-top: 30px;
+    }
+    .main-cards{
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .second-experienceBox p{
+        font-size: 14px;
+    } 
+    .card p{
+        font-size: 14px;
+    }
+    .main-cricle{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    .main-services-card{
+    grid-template-columns: repeat(2, 1fr);
+
+    }
+    
+}
+
+
+@media (max-width : 768px) {
+    
+    .main-cards{
+    grid-template-columns: repeat(1, 1fr);
+    }
+    .main-cricle{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .main-services-card{
+        grid-template-columns: repeat(1, 1fr);
+    
+    }
+    .main-services-card li{
+        font-size: 14px;
+    }
+}
