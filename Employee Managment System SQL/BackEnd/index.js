@@ -8,6 +8,7 @@ const managerRoute = require('./route/worker managment routes/managerRoute');
 const employeeRoute = require('./route/worker managment routes/employeeRoute');
 const projectRoute = require('./route/projectRoute/projectRoute');
 const globalRoute = require('./route/worker managment routes/globalRoute')
+const createTables = require('./model/TABLES');
 const cors = require('cors');
 
 app.use(cors());
@@ -19,6 +20,8 @@ app.use("/manager", managerRoute);
 app.use("/employee", employeeRoute);
 app.use('/project', projectRoute);
 app.use('/password', globalRoute);
+
+createTables();
 
 app.listen(port, (err) => {
     err ? console.log(err) : console.log(`server started : http://localhost:${port}`);
